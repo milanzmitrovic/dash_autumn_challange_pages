@@ -3,7 +3,6 @@ import dash_mantine_components as dmc
 from dash import Dash, Input, Output, State, dcc, html, callback
 import plotly.express as px
 import pandas as pd
-import plotly.io as pio
 
 from data_etl import df_raw
 
@@ -197,36 +196,6 @@ def line_chart(
     )
 
     return fig
-
-
-# This component goes togather with Mantine header
-def create_home_link(label):
-    return dmc.Text(
-        label,
-        size="xl",
-        color="gray",
-    )
-
-
-dmc.Header(
-    height=70,
-    # fixed=True, # uncomment this line if you are using this example in your app
-    p="md",
-    children=[
-        dmc.Container(
-            fluid=True,
-            children=dmc.Group(
-                position="apart",
-                align="flex-start",
-                children=[
-
-                ],
-            ),
-        )
-    ],
-)
-
-
 
 
 

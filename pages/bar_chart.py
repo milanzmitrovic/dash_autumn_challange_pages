@@ -26,8 +26,7 @@ layout = html.Div(
     Input(component_id='bottle-size-filter', component_property='value'),
 
     Input(component_id='top-n-filter', component_property='value'),
-    Input(component_id='metric-chooser', component_property='value'),
-
+    Input(component_id='metric-chooser', component_property='value')
 )
 def update_bar_charts(
         city,
@@ -61,7 +60,6 @@ def update_bar_charts(
         bottle_volume = int(bottle_volume)
         df_filtered = df_filtered.query("bottle_volume_ml == @bottle_volume")
 
-
     fig1 = bar_chart(
         df=df_filtered,
         x_axis='city',
@@ -79,4 +77,3 @@ def update_bar_charts(
     )
 
     return fig1, fig2
-

@@ -4,15 +4,14 @@ from dash import html, dcc
 dash.register_page(__name__, path='/')
 
 layout = html.Div(children=[
-    html.H3(children='Dash app is developed for autumn Dash challange 2022', style={'textAlign': 'center'}),
+    dcc.Markdown('''
+        ### Dash app is developed for the [Plotly Autumn Challenge 2022](https://community.plotly.com/t/autumn-community-app-challenge/66996)
+    ''', link_target='_blank'),
 
     html.H3(
         ['Developer - ',
-         html.A("Milan Mitrovic", href='https://milanzmitrovic.github.io')
-         ],
-        style={'textAlign': 'center'}),
+         html.A("Milan Mitrovic", href='https://milanzmitrovic.github.io', target='_blank')
+        ])
 
-
-
-])
+], style={'textAlign': 'center'})
 
