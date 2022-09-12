@@ -9,11 +9,14 @@ import dash_mantine_components as dmc
 
 app = Dash(__name__, use_pages=True)
 
-app.layout = html.Div([
-    html.H1('Dash Autumn Challange', style={'textAlign': 'center'}),
+app.layout = dmc.Container([
 
-    html.Div(
-        [
+    dmc.Navbar(
+        p="md",
+        width={"base": 150},
+        height=1000,
+        children=[
+
             dmc.Button("Filters", id="modal-demo-button"),
             dmc.Modal(
                 size='lg',
@@ -36,21 +39,26 @@ app.layout = html.Div([
 
                     ]),
             ),
-        ]
+
+            html.Br(),
+
+
+            dcc.Link("Home", href="/"),
+            html.Br(),
+            dcc.Link("bar_charts", href="/bar-chart-page"),
+            html.Br(),
+            dcc.Link("line_charts", href="/line-charts"),
+            html.Br(),
+            dcc.Link("download_page", href="/download-page"),
+
+        ],
+        fixed=True
+
     ),
+
+    html.H1('Dash Autumn Challange', style={'textAlign': 'center'}),
 
     html.Br(),
-
-    html.Div(
-        [
-            html.Div(
-                dcc.Link(
-                    f"{page['name']} - {page['path']}", href=page["relative_path"]
-                )
-            )
-            for page in dash.page_registry.values()
-        ]
-    ),
 
     dash.page_container
 ])
