@@ -46,7 +46,7 @@ sidebar = dmc.Navbar(
                         ),
                     ],
                 ),
-                dmc.Divider(style={"marginBottom": 20, "marginTop": 20}),
+                # dmc.Divider(style={"marginBottom": 20, "marginTop": 20}),
                 dmc.Group(
                     direction="column",
                     children=[
